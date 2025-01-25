@@ -45,7 +45,7 @@
             display: inline-block;
             margin: 20px auto;
             padding: calc(12px * 1.07) calc(30px * 1.14);
-            font-size: 1.56em; /* 30% larger font size */
+            font-size: 1.56em;
             font-weight: bold;
             color: #ffffff;
             background: #ff4500;
@@ -63,8 +63,8 @@
         .share-now {
             display: inline-block;
             margin: 20px auto 15px auto;
-            padding: calc(8px * 0.8) calc(20px * 0.8); /* 20% smaller padding */
-            font-size: calc(0.9em * 0.8); /* 20% smaller font size */
+            padding: calc(8px * 0.8) calc(20px * 0.8);
+            font-size: calc(0.9em * 0.8);
             font-weight: bold;
             color: #ffffff;
             background: #0073e6;
@@ -79,7 +79,7 @@
         .share-now img {
             vertical-align: middle;
             margin-right: 8px;
-            height: 16px; /* 20% smaller image */
+            height: 16px;
         }
 
         .share-now:hover {
@@ -136,7 +136,6 @@
             color: #ff4500;
         }
 
-        /* Media Queries for Mobile */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2em;
@@ -192,10 +191,10 @@
             <span style="font-size: 0.9em;">এই লিঙ্কটি ১০ জনকে টেলিগ্রামে শেয়ার করুন আপনার জেতার সম্ভাবনা বাড়াতে!!!</span>
         </div>
 
-        <a href="#" class="share-now">
+        <button class="share-now" onclick="copyToClipboard()">
             <img src="https://cdn-icons-png.flaticon.com/512/786/786205.png" alt="Share Logo">
             Share Now
-        </a>
+        </button>
 
         <div class="social-proof">
             <p>🎉 মামুন বলছে: ১০ জনকে শেয়ার করার পর আমি Galaxy S25 Ultra পেয়েছি! অসাধারণ!</p>
@@ -215,5 +214,17 @@
 
         <div class="countdown">Offer Ends: February 7th, 2025</div>
     </div>
+
+    <script>
+        function copyToClipboard() {
+            const link = "https://tinyurl.com/y7fspun8";
+            navigator.clipboard.writeText(link).then(() => {
+                alert("Link copied to clipboard: " + link);
+            }).catch(err => {
+                alert("Failed to copy the link. Please try again.");
+                console.error(err);
+            });
+        }
+    </script>
 </body>
 </html>
